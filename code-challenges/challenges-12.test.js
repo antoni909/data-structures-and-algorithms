@@ -21,7 +21,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  const r = /^\d{4}$/;
+  return r.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,7 +34,8 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+  let r = /^[a-zA-Z]{5,10}$/;
+  return r.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +47,8 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  // Solution code here...
+  let r = /[a-zA-Z]+\d/;
+  return r.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,7 +68,9 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+
+  let r = /^[\w]+(\.\w+)?@\w+\.(net|com|org)$/;
+  return r.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +95,9 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+
+  let r = /^((\((\d{3})\))|((\d{3})))[ -]?(\d{3})[ -]?(\d{4})$/;
+  return r.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,7 +110,7 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
+  // Solution
 };
 
 /* ------------------------------------------------------------------------------------------------
