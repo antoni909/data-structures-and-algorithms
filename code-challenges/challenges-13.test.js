@@ -3,13 +3,24 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
+Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-// Solution code here...
+  let result = '';
+  let idx = 0;
+  for(let element in arr){
+    if(arr[element].length > result.length){
+      result = arr[element];
+      idx = parseInt(element);
+    }
+  }
+  if(arr.length <= 0){
+    return -1;
+  }else if(arr.length > 0){
+    return idx;
+  }
 };
-  
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -54,7 +65,7 @@ const standardizePhoneNumbers = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
@@ -73,20 +84,22 @@ const onlyOddChars = (str) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  let match = ':)';
   let pass = true;
-  arr.forEach(str=>{
-    console.log(str);
-    pass = (str.includes(match));
-    if(!pass)return pass = false;
+  let match = ':)';
+
+  arr.forEach(str=> {
+    console.log(pass,str);
+    if(!str.includes(match)) return pass = false;
+
   });
   return pass;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
