@@ -128,7 +128,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  recipe.ingredients.forEach( element => {
+    let removeNum = element.slice(element.indexOf(' ')+1);
+    let removeUnits = removeNum.slice(removeNum.indexOf(' ')+1);
+    result.push(removeUnits);
+  });
+
   return result;
 };
 
