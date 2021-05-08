@@ -3,13 +3,24 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
+Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-// Solution code here...
+  let result = '';
+  let idx = 0;
+  for(let element in arr){
+    if(arr[element].length > result.length){
+      result = arr[element];
+      idx = parseInt(element);
+    }
+  }
+  if(arr.length <= 0){
+    return -1;
+  }else if(arr.length > 0){
+    return idx;
+  }
 };
-  
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -54,7 +65,7 @@ const standardizePhoneNumbers = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
@@ -62,17 +73,33 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+
+  return str
+    .split('')
+    .filter((el,ind) => {
+      return ( ind % 2 ) === 1;
+    })
+    .join('');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let pass = true;
+  let match = ':)';
+
+  arr.forEach(str=> {
+    console.log(pass,str);
+    if(!str.includes(match)) return pass = false;
+
+  });
+  return pass;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -163,9 +190,9 @@ Run your tests from the console: jest challenges-13.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return an index position of the longest string', () => {
-    const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki'];
+    const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
     const strArray2 = [];
-    const strArray3= ['Ginger'];
+    const strArray3= ['Ginger']
 
     expect(longestString(strArray1)).toStrictEqual(2);
     expect(longestString(strArray2)).toStrictEqual(-1);
