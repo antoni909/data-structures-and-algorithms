@@ -17,3 +17,7 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 #### Table of Contents Code Challenges
 
 - day 1 whiteboard challenge [Array Reverse](/javascript/code-challenges/array-reverse/README.md)
+
+- day 2 whiteboard challenge [Array Shift](/javascript/code-challenges/array-shift/README.md)
+
+- day 3 whiteboard challenge [Binary Search](/javascript/code-challenges/array-binary-search/README.md)
